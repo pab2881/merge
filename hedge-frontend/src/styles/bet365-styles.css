@@ -1,0 +1,225 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles - will work with Tailwind */
+:root {
+  --bet365-green: #0B7344;
+  --bet365-green-hover: #0C8A43;
+  --bet365-dark: #14191F;
+  --bet365-darker: #0D1116;
+  --bet365-gray: #1F2630;
+  --bet365-light-gray: #272E39;
+  --bet365-border: #2C3441;
+  --bet365-yellow: #FFDF1B;
+  --bet365-live: #E33E3E;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bet365-dark);
+  color: #FFFFFF;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+/* Hide number input spinners */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bet365-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bet365-green);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bet365-green-hover);
+}
+
+/* Direct CSS overrides that won't conflict with Tailwind */
+.bg-gray-900 {
+  background-color: var(--bet365-dark) !important;
+}
+
+.bg-gray-800 {
+  background-color: var(--bet365-gray) !important;
+}
+
+.bg-gray-700 {
+  background-color: var(--bet365-light-gray) !important;
+}
+
+.border-gray-700 {
+  border-color: var(--bet365-border) !important;
+}
+
+.bg-blue-600, .bg-blue-500 {
+  background-color: var(--bet365-green) !important;
+}
+
+.hover\:bg-gray-700:hover {
+  background-color: var(--bet365-light-gray) !important;
+}
+
+.hover\:bg-gray-600:hover {
+  background-color: var(--bet365-border) !important;
+}
+
+.bg-green-600, .bg-green-500, .from-green-500 {
+  background-color: var(--bet365-green) !important;
+}
+
+.hover\:bg-green-500:hover {
+  background-color: var(--bet365-green-hover) !important;
+}
+
+.text-green-500 {
+  color: var(--bet365-green) !important;
+}
+
+.text-orange-500, .from-blue-600 {
+  color: var(--bet365-yellow) !important;
+}
+
+.bg-orange-500 {
+  background-color: var(--bet365-live) !important;
+}
+
+/* Pulse animation for live tag */
+.bg-orange-500.bg-opacity-20 {
+  position: relative;
+  background-color: rgba(227, 62, 62, 0.2) !important;
+}
+
+.bg-orange-500.bg-opacity-20::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  border-radius: 50%;
+  margin-right: 4px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+/* Enhanced gradients */
+.bg-gradient-to-r.from-blue-600.to-green-500 {
+  background: linear-gradient(135deg, var(--bet365-green), var(--bet365-green-hover)) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-gradient-to-r.from-blue-600.to-green-500::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 30%;
+  background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E") repeat;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+/* Enhanced card styling */
+.bg-gray-800.rounded-lg.overflow-hidden.shadow-lg.border.border-gray-700 {
+  transition: all 0.2s ease;
+}
+
+.bg-gray-800.rounded-lg.overflow-hidden.shadow-lg.border.border-gray-700:hover {
+  border-color: var(--bet365-green) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Text and logo styling */
+.text-transparent.bg-clip-text.bg-gradient-to-r.from-green-500.to-blue-500 {
+  color: var(--bet365-yellow) !important;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  background-image: none !important;
+}
+
+/* Enhancing button styling */
+.bg-gray-700.hover\:bg-gray-600.p-2.rounded {
+  transition: all 0.15s ease;
+}
+
+.bg-gray-700.hover\:bg-gray-600.p-2.rounded:hover {
+  transform: translateY(-1px);
+}
+
+.bg-green-600.text-white.py-3.rounded-md.font-bold.hover\:bg-green-500 {
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.bg-green-600.text-white.py-3.rounded-md.font-bold.hover\:bg-green-500:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Stake input styling */
+.bg-gray-900.pl-6.pr-2.py-1.rounded.w-24.text-right {
+  border: 1px solid var(--bet365-border);
+  transition: all 0.15s ease;
+}
+
+.bg-gray-900.pl-6.pr-2.py-1.rounded.w-24.text-right:focus {
+  border-color: var(--bet365-green);
+  outline: none;
+  box-shadow: 0 0 0 1px var(--bet365-green);
+}
+
+/* Bet slip item styling */
+.bg-gray-700.rounded-md.p-3.mb-3 {
+  border: 1px solid var(--bet365-border);
+}
+
+/* Enhancing navigation items */
+.flex.items-center.space-x-3.text-green-500.font-medium.hover\:bg-gray-700.p-3.rounded-md {
+  border-left: 3px solid var(--bet365-green);
+  color: var(--bet365-yellow) !important;
+}
+
+/* Mobile navigation styling */
+.flex.flex-col.items-center.text-green-500 {
+  transition: all 0.15s ease;
+}
+
+.flex.flex-col.items-center.text-green-500:hover {
+  color: var(--bet365-green-hover) !important;
+}
+
+.flex.flex-col.items-center.text-gray-400 {
+  transition: all 0.15s ease;
+}
+
+.flex.flex-col.items-center.text-gray-400:hover {
+  color: #FFFFFF !important;
+}

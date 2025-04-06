@@ -1,0 +1,392 @@
+import React, { useState, useEffect } from 'react';
+import { Card, CardHeader, CardTitle, CardBody, Button, Spinner, Badge, Alert, Table } from 'react-bootstrap';
+import { RefreshCw, TrendingUp, AlertTriangle, ArrowDown, Zap, Award, BarChart2 } from 'lucide-react';
+
+const ThreeWayHedgeAnalysis = () => {
+  // State for opportunities
+  const [opportunities, setOpportunities] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [stake, setStake] = useState(100);
+  const [minProfit, setMinProfit] = useState(1.0);
+  const [selectedOpportunity, setSelectedOpportunity] = useState(null);
+  
+  // Fetch opportunities
+  const fetchOpportunities = async () => {
+    setLoading(true);
+    setError(null);
+    
+    try {
+      const response = await fetch(
+        `http://localhost:3003/api/hedge/three-way-opportunities?stake=${stake}&min_profit_percentage=${minProfit}`,
+        {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          }
+        }
+      );
+      
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.detail || 'Failed to fetch opportunities');
+      }
+      
+      const data = await response.json();
+      setOpportunities(data.opportunities || []);
+    } catch (err) {
+      console.error('Error fetching opportunities:', err);
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+  
+  // Format currency
+  const formatCurrency = (value) => {
+    return new Intl.NumberFormat('en-GB', {
+      style: 'currency',
+      currency: 'GBP',
+      minimumFractionDigits: 2
+    }).format(value);
+  };
+  
+  // Execute a hedge opportunity
+  const executeHedge = async (opportunityId) => {
+    try {
+      // Validate first
+      const validationResponse = await fetch(`http://localhost:3003/api/hedge/validate-opportunity?opportunity_id=${opportunityId}`, {
+        method: 'POST'
+      });
+      
+      if (!validationResponse.ok) {
+        const errorData = await validationResponse.json();
+        throw new Error(errorData.detail || 'Validation failed');
+      }
+      
+      const validationData = await validationResponse.json();
+      
+      if (!validationData.valid) {
+        // Show alert but let user proceed if they want
+        if (!confirm(`This opportunity may no longer be profitable: ${validationData.details.message}. Do you still want to proceed?`)) {
+          return;
+        }
+      }
+      
+      // Execute hedge
+      const executionResponse = await fetch('http://localhost:3003/api/hedge/execute', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          opportunity_id: opportunityId,
+          validated: true
+        })
+      });
+      
+      if (!executionResponse.ok) {
+        const errorData = await executionResponse.json();
+        throw new Error(errorData.detail || 'Execution failed');
+      }
+      
+      const executionData = await executionResponse.json();
+      alert(`Hedge execution started! Execution ID: ${executionData.execution_id}`);
+      
+    } catch (error) {
+      console.error('Error executing hedge:', error);
+      alert(`Failed to execute hedge: ${error.message}`);
+    }
+  };
+  
+  // Calculate overround color
+  const getOverroundColor = (overround) => {
+    if (overround <= 0) return 'success';  // Arbitrage opportunity (rare)
+    if (overround <= 0.02) return 'success';  // Very good
+    if (overround <= 0.04) return 'warning';  // Decent
+    return 'danger';  // High overround
+  };
+  
+  // View detailed opportunity
+  const viewOpportunity = (opportunity) => {
+    setSelectedOpportunity(opportunity);
+  };
+
+  return (
+    <div className="container mx-auto p-4">
+      <div className="mb-4 d-flex justify-content-between align-items-center">
+        <div>
+          <h1 className="mb-0">Three-Way Hedge Analysis</h1>
+          <p className="text-muted">Back one outcome, lay the other two for guaranteed profit</p>
+        </div>
+        <div className="d-flex">
+          <div className="form-group me-2">
+            <label htmlFor="stake">Stake (£)</label>
+            <input
+              id="stake"
+              type="number"
+              className="form-control"
+              value={stake}
+              onChange={(e) => setStake(Math.max(1, parseFloat(e.target.value)))}
+              min="1"
+              step="10"
+            />
+          </div>
+          <div className="form-group me-2">
+            <label htmlFor="minProfit">Min ROI (%)</label>
+            <input
+              id="minProfit"
+              type="number"
+              className="form-control"
+              value={minProfit}
+              onChange={(e) => setMinProfit(Math.max(0, parseFloat(e.target.value)))}
+              min="0"
+              step="0.1"
+            />
+          </div>
+          <div className="d-flex align-items-end">
+            <Button
+              variant="primary"
+              onClick={fetchOpportunities}
+              disabled={loading}
+              className="d-flex align-items-center"
+            >
+              {loading ? (
+                <>
+                  <Spinner size="sm" className="me-2" />
+                  Searching...
+                </>
+              ) : (
+                <>
+                  <RefreshCw className="me-2" size={16} />
+                  Find Opportunities
+                </>
+              )}
+            </Button>
+          </div>
+        </div>
+      </div>
+      
+      {error && (
+        <Alert variant="danger" className="mb-4">
+          <div className="d-flex align-items-center">
+            <AlertTriangle className="me-2" size={20} />
+            <div>
+              <h5 className="alert-heading mb-1">Error</h5>
+              <p className="mb-0">{error}</p>
+            </div>
+          </div>
+        </Alert>
+      )}
+      
+      <div className="row">
+        <div className="col-md-8">
+          <Card>
+            <CardHeader>
+              <CardTitle className="d-flex align-items-center">
+                <TrendingUp className="me-2" />
+                Three-Way Hedge Opportunities
+                {opportunities.length > 0 && (
+                  <Badge bg="primary" className="ms-2">
+                    {opportunities.length}
+                  </Badge>
+                )}
+              </CardTitle>
+            </CardHeader>
+            <CardBody>
+              {loading ? (
+                <div className="text-center py-5">
+                  <Spinner animation="border" />
+                  <p className="mt-3">Searching for opportunities...</p>
+                </div>
+              ) : opportunities.length > 0 ? (
+                <div className="table-responsive">
+                  <Table striped hover>
+                    <thead>
+                      <tr>
+                        <th>Event</th>
+                        <th>Back</th>
+                        <th>ROI</th>
+                        <th>Overround</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {opportunities.map((op) => (
+                        <tr key={op.id}>
+                          <td className="font-weight-bold">{op.event_name}</td>
+                          <td>
+                            {op.back_selection} @ {op.back_odds.toFixed(2)}
+                          </td>
+                          <td className="text-success font-weight-bold">
+                            {op.roi.toFixed(2)}%
+                          </td>
+                          <td>
+                            <Badge bg={getOverroundColor(op.overround)}>
+                              {(op.overround * 100).toFixed(2)}%
+                            </Badge>
+                          </td>
+                          <td>
+                            <Button
+                              variant="outline-primary"
+                              size="sm"
+                              className="me-2"
+                              onClick={() => viewOpportunity(op)}
+                            >
+                              <BarChart2 size={14} className="me-1" />
+                              Details
+                            </Button>
+                            <Button
+                              variant="primary"
+                              size="sm"
+                              onClick={() => executeHedge(op.id)}
+                            >
+                              <Zap size={14} className="me-1" />
+                              Execute
+                            </Button>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </Table>
+                </div>
+              ) : (
+                <div className="text-center py-5">
+                  <ArrowDown size={48} className="text-muted mb-3" />
+                  <h4>No Three-Way Hedge Opportunities Found</h4>
+                  <p className="text-muted">
+                    Three-way hedges require specific market conditions.<br />
+                    Try adjusting your ROI threshold or click "Find Opportunities" to search again.
+                  </p>
+                </div>
+              )}
+            </CardBody>
+          </Card>
+        </div>
+        
+        <div className="col-md-4">
+          {selectedOpportunity ? (
+            <Card>
+              <CardHeader>
+                <CardTitle className="d-flex align-items-center">
+                  <Award className="me-2" />
+                  Opportunity Details
+                </CardTitle>
+              </CardHeader>
+              <CardBody>
+                <h5>{selectedOpportunity.event_name}</h5>
+                <p className="text-muted">{selectedOpportunity.competition || "Football"}</p>
+                
+                <div className="alert alert-primary">
+                  <h6 className="alert-heading">Betting Strategy</h6>
+                  <div className="mb-2">
+                    <strong>Back:</strong> {selectedOpportunity.back_selection} @ {selectedOpportunity.back_odds.toFixed(2)}
+                    <div className="small text-muted">Stake: {formatCurrency(selectedOpportunity.back_stake)}</div>
+                  </div>
+                  <div className="mb-2">
+                    <strong>Lay 1:</strong> {selectedOpportunity.lay_selection1} @ {selectedOpportunity.lay_odds1.toFixed(2)}
+                    <div className="small text-muted">Stake: {formatCurrency(selectedOpportunity.lay_stake1)}</div>
+                  </div>
+                  <div className="mb-2">
+                    <strong>Lay 2:</strong> {selectedOpportunity.lay_selection2} @ {selectedOpportunity.lay_odds2.toFixed(2)}
+                    <div className="small text-muted">Stake: {formatCurrency(selectedOpportunity.lay_stake2)}</div>
+                  </div>
+                </div>
+                
+                <div className="alert alert-success">
+                  <h6 className="alert-heading">Profit Analysis</h6>
+                  <div className="d-flex justify-content-between mb-2">
+                    <span>Total Investment:</span>
+                    <strong>{formatCurrency(selectedOpportunity.back_stake + selectedOpportunity.lay_stake1 * (selectedOpportunity.lay_odds1 - 1) + selectedOpportunity.lay_stake2 * (selectedOpportunity.lay_odds2 - 1))}</strong>
+                  </div>
+                  <div className="d-flex justify-content-between mb-2">
+                    <span>Guaranteed Profit:</span>
+                    <strong className="text-success">{formatCurrency(selectedOpportunity.profit)}</strong>
+                  </div>
+                  <div className="d-flex justify-content-between">
+                    <span>Return on Investment:</span>
+                    <strong className="text-success">{selectedOpportunity.roi.toFixed(2)}%</strong>
+                  </div>
+                </div>
+                
+                <div className="alert alert-secondary">
+                  <h6 className="alert-heading">Market Data</h6>
+                  <div className="d-flex justify-content-between mb-2">
+                    <span>Exchange:</span>
+                    <strong>{selectedOpportunity.exchange}</strong>
+                  </div>
+                  <div className="d-flex justify-content-between mb-2">
+                    <span>Implied Probability Sum:</span>
+                    <strong>{(selectedOpportunity.implied_probability_sum * 100).toFixed(2)}%</strong>
+                  </div>
+                  <div className="d-flex justify-content-between">
+                    <span>Overround:</span>
+                    <Badge bg={getOverroundColor(selectedOpportunity.overround)} className="px-2 py-1">
+                      {(selectedOpportunity.overround * 100).toFixed(2)}%
+                    </Badge>
+                  </div>
+                </div>
+                
+                <Button
+                  variant="primary"
+                  className="w-100 mt-3"
+                  onClick={() => executeHedge(selectedOpportunity.id)}
+                >
+                  <Zap size={16} className="me-2" />
+                  Execute This Hedge
+                </Button>
+              </CardBody>
+            </Card>
+          ) : (
+            <Card>
+              <CardHeader>
+                <CardTitle>Three-Way Hedging Guide</CardTitle>
+              </CardHeader>
+              <CardBody>
+                <h5>How Three-Way Hedging Works</h5>
+                <p>
+                  Three-way hedging guarantees profit by:
+                </p>
+                <ol>
+                  <li>Backing one outcome (e.g., Home Win)</li>
+                  <li>Laying the other two outcomes (Draw and Away Win)</li>
+                </ol>
+                <p>
+                  This distributes your stake across the entire market to guarantee profit 
+                  when the implied probability sum is close to or below 100%.
+                </p>
+                
+                <h5 className="mt-4">Overround Explained</h5>
+                <p>
+                  Overround is the sum of implied probabilities minus 100%. Lower is better:
+                </p>
+                <ul className="list-unstyled">
+                  <li>
+                    <Badge bg="success" className="me-2">0-2%</Badge>
+                    Excellent opportunity
+                  </li>
+                  <li className="mt-1">
+                    <Badge bg="warning" className="me-2">2-4%</Badge>
+                    Good opportunity
+                  </li>
+                  <li className="mt-1">
+                    <Badge bg="danger" className="me-2">4%+</Badge>
+                    Marginal opportunity
+                  </li>
+                </ul>
+                
+                <h5 className="mt-4">Finding Opportunities</h5>
+                <p>
+                  Click "Find Opportunities" to scan for three-way hedges. The system automatically 
+                  calculates optimal stakes to ensure equal profit regardless of the match outcome.
+                </p>
+              </CardBody>
+            </Card>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ThreeWayHedgeAnalysis;
