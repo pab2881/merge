@@ -1,0 +1,21 @@
+2025-03-29 22:42:36,251 - root - INFO - Fetching live markets for sport: 1
+2025-03-29 22:42:36,256 - betfair_api - ERROR - Certificate file not found: ./betfair-self.crt
+2025-03-29 22:42:36,256 - betfair_api - ERROR - Key file not found: ./betfair-key.pem
+2025-03-29 22:42:36,281 - betfair_api - ERROR - Login error: Could not find the TLS certificate file, invalid path: ./betfair-self.crt
+2025-03-29 22:42:36,281 - root - WARNING - No live markets found
+2025-03-29 22:42:36,281 - root - ERROR - Error fetching live markets: 404: No live markets found
+2025-03-29 22:51:46,566 - root - INFO - Fetching live markets for sport: 1
+2025-03-29 22:51:46,570 - betfair_api - ERROR - Certificate file not found: ./betfair-self.crt
+2025-03-29 22:51:46,570 - betfair_api - ERROR - Key file not found: ./betfair-key.pem
+2025-03-29 22:51:46,574 - betfair_api - ERROR - Login error: Could not find the TLS certificate file, invalid path: ./betfair-self.crt
+2025-03-29 22:51:46,574 - root - WARNING - No live markets found
+2025-03-29 22:51:46,574 - root - ERROR - Error fetching live markets: 404: No live markets found
+2025-03-29 23:16:24,159 - root - INFO - Fetching live markets for sport: 1
+2025-03-29 23:16:25,405 - betfair_api - INFO - Successfully logged in to Betfair
+2025-03-29 23:16:25,571 - root - INFO - Found 100 live markets
+2025-03-29 23:17:53,340 - root - INFO - Fetching market odds for market ID: 1.240072220
+2025-03-29 23:17:53,572 - betfair_api - INFO - Successfully logged in to Betfair
+2025-03-29 23:17:53,744 - root - INFO - Market odds fetched successfully
+2025-03-29 23:18:18,858 - root - INFO - Fetching market odds for market ID: 1.240072220
+2025-03-29 23:18:19,065 - betfair_api - INFO - Successfully logged in to Betfair
+2025-03-29 23:18:19,199 - root - INFO - Market odds fetched successfully

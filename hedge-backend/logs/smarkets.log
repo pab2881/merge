@@ -1,0 +1,249 @@
+2025-03-31 23:28:08,527 - smarkets_api - INFO - Initialized Smarkets API client
+2025-03-31 23:29:49,348 - smarkets_api - INFO - Initialized Smarkets API client
+2025-03-31 23:38:57,329 - smarkets_api - INFO - Initialized Smarkets API client
+2025-03-31 23:38:57,569 - smarkets_api - INFO - Initialized Smarkets API client
+2025-03-31 23:38:57,676 - smarkets_api - INFO - Initialized Smarkets API client
+2025-03-31 23:38:57,676 - smarkets_api - INFO - Initialized Smarkets API client
+2025-03-31 23:42:31,136 - smarkets_api - INFO - Initialized Smarkets API client
+2025-03-31 23:42:31,403 - smarkets_api - INFO - Initialized Smarkets API client
+2025-03-31 23:42:31,438 - smarkets_api - INFO - Initialized Smarkets API client
+2025-03-31 23:42:31,438 - smarkets_api - INFO - Initialized Smarkets API client
+2025-04-01 01:20:04,661 - smarkets_api - INFO - Initialized Smarkets API client
+2025-04-01 01:20:04,927 - smarkets_api - INFO - Initialized Smarkets API client
+2025-04-01 01:20:04,944 - smarkets_api - INFO - Initialized Smarkets API client
+2025-04-01 01:20:04,944 - smarkets_api - INFO - Initialized Smarkets API client
+2025-04-01 01:20:34,496 - smarkets_api - INFO - Initialized Smarkets API client
+2025-04-01 01:20:34,770 - smarkets_api - INFO - Initialized Smarkets API client
+2025-04-01 01:20:34,786 - smarkets_api - INFO - Initialized Smarkets API client
+2025-04-01 01:20:34,786 - smarkets_api - INFO - Initialized Smarkets API client
+2025-04-01 18:33:35,059 - smarkets_api - INFO - Initialized Smarkets API client
+2025-04-01 18:33:35,334 - smarkets_api - INFO - Initialized Smarkets API client
+2025-04-01 18:33:35,352 - smarkets_api - INFO - Initialized Smarkets API client
+2025-04-01 18:33:35,352 - smarkets_api - INFO - Initialized Smarkets API client
+2025-04-01 18:37:10,401 - smarkets_api - INFO - Fetching live football markets from Smarkets
+2025-04-01 18:37:10,401 - smarkets_api - INFO - Fetching live football markets from Smarkets
+2025-04-01 18:37:10,401 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 18:37:10,401 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 18:37:12,048 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 18:37:12,048 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 18:37:12,049 - smarkets_api - WARNING - Smarkets authentication failed, using fallback sample data
+2025-04-01 18:37:12,049 - smarkets_api - WARNING - Smarkets authentication failed, using fallback sample data
+2025-04-01 18:37:12,050 - smarkets_api - INFO - Using fallback sample market data for Smarkets
+2025-04-01 18:37:12,050 - smarkets_api - INFO - Using fallback sample market data for Smarkets
+2025-04-01 18:37:12,050 - smarkets_api - INFO - Fetching odds for market sm_1234567
+2025-04-01 18:37:12,050 - smarkets_api - INFO - Fetching odds for market sm_1234567
+2025-04-01 18:37:12,050 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 18:37:12,050 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 18:37:12,700 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 18:37:12,700 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 18:37:12,700 - smarkets_api - WARNING - Using fallback sample odds data for market sm_1234567
+2025-04-01 18:37:12,700 - smarkets_api - WARNING - Using fallback sample odds data for market sm_1234567
+2025-04-01 18:37:12,701 - smarkets_api - INFO - Using fallback sample odds data for market sm_1234567
+2025-04-01 18:37:12,701 - smarkets_api - INFO - Using fallback sample odds data for market sm_1234567
+2025-04-01 18:37:12,701 - smarkets_api - INFO - Fetching odds for market sm_1234568
+2025-04-01 18:37:12,701 - smarkets_api - INFO - Fetching odds for market sm_1234568
+2025-04-01 18:37:12,701 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 18:37:12,701 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 18:37:12,979 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 18:37:12,979 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 18:37:12,979 - smarkets_api - WARNING - Using fallback sample odds data for market sm_1234568
+2025-04-01 18:37:12,979 - smarkets_api - WARNING - Using fallback sample odds data for market sm_1234568
+2025-04-01 18:37:12,979 - smarkets_api - INFO - Using fallback sample odds data for market sm_1234568
+2025-04-01 18:37:12,979 - smarkets_api - INFO - Using fallback sample odds data for market sm_1234568
+2025-04-01 18:37:12,979 - smarkets_api - INFO - Fetching odds for market sm_1234569
+2025-04-01 18:37:12,979 - smarkets_api - INFO - Fetching odds for market sm_1234569
+2025-04-01 18:37:12,979 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 18:37:12,979 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 18:37:13,302 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 18:37:13,302 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 18:37:13,302 - smarkets_api - WARNING - Using fallback sample odds data for market sm_1234569
+2025-04-01 18:37:13,302 - smarkets_api - WARNING - Using fallback sample odds data for market sm_1234569
+2025-04-01 18:37:13,302 - smarkets_api - INFO - Using fallback sample odds data for market sm_1234569
+2025-04-01 18:37:13,302 - smarkets_api - INFO - Using fallback sample odds data for market sm_1234569
+2025-04-01 18:37:13,302 - smarkets_api - INFO - Fetching odds for market sm_1234570
+2025-04-01 18:37:13,302 - smarkets_api - INFO - Fetching odds for market sm_1234570
+2025-04-01 18:37:13,302 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 18:37:13,302 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 18:37:13,661 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 18:37:13,661 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 18:37:13,661 - smarkets_api - WARNING - Using fallback sample odds data for market sm_1234570
+2025-04-01 18:37:13,661 - smarkets_api - WARNING - Using fallback sample odds data for market sm_1234570
+2025-04-01 18:37:13,661 - smarkets_api - INFO - Using fallback sample odds data for market sm_1234570
+2025-04-01 18:37:13,661 - smarkets_api - INFO - Using fallback sample odds data for market sm_1234570
+2025-04-01 18:37:13,661 - smarkets_api - INFO - Fetching odds for market sm_1234571
+2025-04-01 18:37:13,661 - smarkets_api - INFO - Fetching odds for market sm_1234571
+2025-04-01 18:37:13,662 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 18:37:13,662 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 18:37:13,971 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 18:37:13,971 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 18:37:13,971 - smarkets_api - WARNING - Using fallback sample odds data for market sm_1234571
+2025-04-01 18:37:13,971 - smarkets_api - WARNING - Using fallback sample odds data for market sm_1234571
+2025-04-01 18:37:13,971 - smarkets_api - INFO - Using fallback sample odds data for market sm_1234571
+2025-04-01 18:37:13,971 - smarkets_api - INFO - Using fallback sample odds data for market sm_1234571
+2025-04-01 20:23:21,444 - smarkets_api - INFO - Fetching live football markets from Smarkets
+2025-04-01 20:23:21,444 - smarkets_api - INFO - Fetching live football markets from Smarkets
+2025-04-01 20:23:21,445 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 20:23:21,445 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 20:23:21,578 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 20:23:21,578 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 20:23:21,578 - smarkets_api - WARNING - Smarkets authentication failed, using fallback sample data
+2025-04-01 20:23:21,578 - smarkets_api - WARNING - Smarkets authentication failed, using fallback sample data
+2025-04-01 20:23:21,578 - smarkets_api - INFO - Using fallback sample market data for Smarkets
+2025-04-01 20:23:21,578 - smarkets_api - INFO - Using fallback sample market data for Smarkets
+2025-04-01 20:23:21,578 - smarkets_api - INFO - Fetching odds for market sm_1234567
+2025-04-01 20:23:21,578 - smarkets_api - INFO - Fetching odds for market sm_1234567
+2025-04-01 20:23:21,578 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 20:23:21,578 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 20:23:21,664 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 20:23:21,664 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 20:23:21,664 - smarkets_api - WARNING - Using fallback sample odds data for market sm_1234567
+2025-04-01 20:23:21,664 - smarkets_api - WARNING - Using fallback sample odds data for market sm_1234567
+2025-04-01 20:23:21,664 - smarkets_api - INFO - Using fallback sample odds data for market sm_1234567
+2025-04-01 20:23:21,664 - smarkets_api - INFO - Using fallback sample odds data for market sm_1234567
+2025-04-01 20:23:21,665 - smarkets_api - INFO - Fetching odds for market sm_1234568
+2025-04-01 20:23:21,665 - smarkets_api - INFO - Fetching odds for market sm_1234568
+2025-04-01 20:23:21,665 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 20:23:21,665 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 20:23:21,769 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 20:23:21,769 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 20:23:21,770 - smarkets_api - WARNING - Using fallback sample odds data for market sm_1234568
+2025-04-01 20:23:21,770 - smarkets_api - WARNING - Using fallback sample odds data for market sm_1234568
+2025-04-01 20:23:21,770 - smarkets_api - INFO - Using fallback sample odds data for market sm_1234568
+2025-04-01 20:23:21,770 - smarkets_api - INFO - Using fallback sample odds data for market sm_1234568
+2025-04-01 20:23:21,770 - smarkets_api - INFO - Fetching odds for market sm_1234569
+2025-04-01 20:23:21,770 - smarkets_api - INFO - Fetching odds for market sm_1234569
+2025-04-01 20:23:21,770 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 20:23:21,770 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 20:23:21,859 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 20:23:21,859 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 20:23:21,860 - smarkets_api - WARNING - Using fallback sample odds data for market sm_1234569
+2025-04-01 20:23:21,860 - smarkets_api - WARNING - Using fallback sample odds data for market sm_1234569
+2025-04-01 20:23:21,860 - smarkets_api - INFO - Using fallback sample odds data for market sm_1234569
+2025-04-01 20:23:21,860 - smarkets_api - INFO - Using fallback sample odds data for market sm_1234569
+2025-04-01 20:23:21,860 - smarkets_api - INFO - Fetching odds for market sm_1234570
+2025-04-01 20:23:21,860 - smarkets_api - INFO - Fetching odds for market sm_1234570
+2025-04-01 20:23:21,860 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 20:23:21,860 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 20:23:21,956 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 20:23:21,956 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 20:23:21,956 - smarkets_api - WARNING - Using fallback sample odds data for market sm_1234570
+2025-04-01 20:23:21,956 - smarkets_api - WARNING - Using fallback sample odds data for market sm_1234570
+2025-04-01 20:23:21,956 - smarkets_api - INFO - Using fallback sample odds data for market sm_1234570
+2025-04-01 20:23:21,956 - smarkets_api - INFO - Using fallback sample odds data for market sm_1234570
+2025-04-01 20:23:21,956 - smarkets_api - INFO - Fetching odds for market sm_1234571
+2025-04-01 20:23:21,956 - smarkets_api - INFO - Fetching odds for market sm_1234571
+2025-04-01 20:23:21,956 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 20:23:21,956 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 20:23:22,051 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 20:23:22,051 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 20:23:22,051 - smarkets_api - WARNING - Using fallback sample odds data for market sm_1234571
+2025-04-01 20:23:22,051 - smarkets_api - WARNING - Using fallback sample odds data for market sm_1234571
+2025-04-01 20:23:22,051 - smarkets_api - INFO - Using fallback sample odds data for market sm_1234571
+2025-04-01 20:23:22,051 - smarkets_api - INFO - Using fallback sample odds data for market sm_1234571
+2025-04-01 20:30:27,596 - smarkets_api - INFO - Fetching live football markets from Smarkets
+2025-04-01 20:30:27,596 - smarkets_api - INFO - Fetching live football markets from Smarkets
+2025-04-01 20:30:27,596 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 20:30:27,596 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 20:30:27,707 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 20:30:27,707 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 20:30:27,707 - smarkets_api - WARNING - Smarkets authentication failed, using fallback sample data
+2025-04-01 20:30:27,707 - smarkets_api - WARNING - Smarkets authentication failed, using fallback sample data
+2025-04-01 20:30:27,708 - smarkets_api - INFO - Using fallback sample market data for Smarkets
+2025-04-01 20:30:27,708 - smarkets_api - INFO - Using fallback sample market data for Smarkets
+2025-04-01 20:30:27,708 - smarkets_api - INFO - Fetching odds for market sm_1234567
+2025-04-01 20:30:27,708 - smarkets_api - INFO - Fetching odds for market sm_1234567
+2025-04-01 20:30:27,708 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 20:30:27,708 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 20:30:27,804 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 20:30:27,804 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 20:30:27,804 - smarkets_api - WARNING - Using fallback sample odds data for market sm_1234567
+2025-04-01 20:30:27,804 - smarkets_api - WARNING - Using fallback sample odds data for market sm_1234567
+2025-04-01 20:30:27,804 - smarkets_api - INFO - Using fallback sample odds data for market sm_1234567
+2025-04-01 20:30:27,804 - smarkets_api - INFO - Using fallback sample odds data for market sm_1234567
+2025-04-01 20:30:27,804 - smarkets_api - INFO - Fetching odds for market sm_1234568
+2025-04-01 20:30:27,804 - smarkets_api - INFO - Fetching odds for market sm_1234568
+2025-04-01 20:30:27,804 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 20:30:27,804 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 20:30:27,903 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 20:30:27,903 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 20:30:27,903 - smarkets_api - WARNING - Using fallback sample odds data for market sm_1234568
+2025-04-01 20:30:27,903 - smarkets_api - WARNING - Using fallback sample odds data for market sm_1234568
+2025-04-01 20:30:27,903 - smarkets_api - INFO - Using fallback sample odds data for market sm_1234568
+2025-04-01 20:30:27,903 - smarkets_api - INFO - Using fallback sample odds data for market sm_1234568
+2025-04-01 20:30:27,903 - smarkets_api - INFO - Fetching odds for market sm_1234569
+2025-04-01 20:30:27,903 - smarkets_api - INFO - Fetching odds for market sm_1234569
+2025-04-01 20:30:27,903 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 20:30:27,903 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 20:30:27,992 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 20:30:27,992 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 20:30:27,993 - smarkets_api - WARNING - Using fallback sample odds data for market sm_1234569
+2025-04-01 20:30:27,993 - smarkets_api - WARNING - Using fallback sample odds data for market sm_1234569
+2025-04-01 20:30:27,993 - smarkets_api - INFO - Using fallback sample odds data for market sm_1234569
+2025-04-01 20:30:27,993 - smarkets_api - INFO - Using fallback sample odds data for market sm_1234569
+2025-04-01 20:30:27,994 - smarkets_api - INFO - Fetching odds for market sm_1234570
+2025-04-01 20:30:27,994 - smarkets_api - INFO - Fetching odds for market sm_1234570
+2025-04-01 20:30:27,994 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 20:30:27,994 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 20:30:28,102 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 20:30:28,102 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 20:30:28,102 - smarkets_api - WARNING - Using fallback sample odds data for market sm_1234570
+2025-04-01 20:30:28,102 - smarkets_api - WARNING - Using fallback sample odds data for market sm_1234570
+2025-04-01 20:30:28,102 - smarkets_api - INFO - Using fallback sample odds data for market sm_1234570
+2025-04-01 20:30:28,102 - smarkets_api - INFO - Using fallback sample odds data for market sm_1234570
+2025-04-01 20:30:28,102 - smarkets_api - INFO - Fetching odds for market sm_1234571
+2025-04-01 20:30:28,102 - smarkets_api - INFO - Fetching odds for market sm_1234571
+2025-04-01 20:30:28,102 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 20:30:28,102 - smarkets_api - INFO - Authenticating with Smarkets API as user: your_smarkets_username
+2025-04-01 20:30:28,198 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 20:30:28,198 - smarkets_api - ERROR - Failed to authenticate with Smarkets API: 400 - {"data":"data.username must be email","error_type":"REQUEST_VALIDATION_ERROR"}
+
+2025-04-01 20:30:28,199 - smarkets_api - WARNING - Using fallback sample odds data for market sm_1234571
+2025-04-01 20:30:28,199 - smarkets_api - WARNING - Using fallback sample odds data for market sm_1234571
+2025-04-01 20:30:28,199 - smarkets_api - INFO - Using fallback sample odds data for market sm_1234571
+2025-04-01 20:30:28,199 - smarkets_api - INFO - Using fallback sample odds data for market sm_1234571
+2025-04-02 23:23:16,189 - smarkets_api - INFO - Initialized Smarkets API client
+2025-04-03 01:41:51,178 - smarkets_api - INFO - Initialized Smarkets API client
+2025-04-03 02:15:11,874 - smarkets_api - INFO - Initialized Smarkets API client
+2025-04-03 02:15:12,130 - smarkets_api - INFO - Initialized Smarkets API client
+2025-04-03 02:15:12,153 - smarkets_api - INFO - Initialized Smarkets API client
+2025-04-03 02:15:12,153 - smarkets_api - INFO - Initialized Smarkets API client
+2025-04-03 18:50:29,657 - smarkets_api - INFO - Initialized Smarkets API client
+2025-04-03 18:58:46,161 - smarkets_api - INFO - Initialized Smarkets API client
+2025-04-03 18:58:46,428 - smarkets_api - INFO - Initialized Smarkets API client
+2025-04-03 18:58:46,445 - smarkets_api - INFO - Initialized Smarkets API client
+2025-04-03 18:58:46,445 - smarkets_api - INFO - Initialized Smarkets API client
